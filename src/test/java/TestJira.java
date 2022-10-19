@@ -1,6 +1,4 @@
-package PageObject.PageSteps.Test;
-
-import hooks.WebHooks;
+import Hooks.WebHooks;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,7 +29,7 @@ import static PageObject.PageSteps.TaskPageSteps.changeStatusTodo;
 import static PageObject.PageSteps.TaskPageSteps.checkTaskStatus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static utils.Configuration.getConfigurationValue;
+import static Utils.Configuration.getConfigurationValue;
 
 public class TestJira extends WebHooks {
     private static final String PROJECT = "Test";
