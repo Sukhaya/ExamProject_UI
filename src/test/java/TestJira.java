@@ -1,10 +1,8 @@
 import Hooks.WebHooks;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static PageObject.PageSteps.AuthorizationPageSteps.authorization;
-import static PageObject.PageSteps.AuthorizationPageSteps.openUrl;
 import static PageObject.PageSteps.CreateTaskPageSteps.clickAccept;
 import static PageObject.PageSteps.CreateTaskPageSteps.setDescription;
 import static PageObject.PageSteps.CreateTaskPageSteps.setSummary;
@@ -32,13 +30,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static Utils.Configuration.getConfigurationValue;
 
 public class TestJira extends WebHooks {
-    private static final String PROJECT = "Test";
-
-    @BeforeEach
-    public void open() {
-        openUrl(getConfigurationValue("jiraUrl"));
-        authorization(getConfigurationValue("login"), getConfigurationValue("password"));
-    }
 
     @Test
     @DisplayName("Проверка авторизации")
@@ -54,7 +45,7 @@ public class TestJira extends WebHooks {
         openMenuOfProjects();
         openTestProject();
         assertTrue(isProjectSidebarAppears());
-        assertEquals(PROJECT, getProjectTitle());
+        assertEquals(getConfigurationValue("PROJECT"), getProjectTitle());
     }
 
 
