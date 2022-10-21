@@ -3,6 +3,7 @@ import Hooks.WebHooks;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static PageObject.PageElements.AuthorizationPageElements.loginButton;
 import static PageObject.PageSteps.CreateTaskPageSteps.clickAccept;
 import static PageObject.PageSteps.CreateTaskPageSteps.setDescription;
 import static PageObject.PageSteps.CreateTaskPageSteps.setSummary;
@@ -26,6 +27,7 @@ import static PageObject.PageSteps.TaskPageSteps.changeStatusInProgress;
 import static PageObject.PageSteps.TaskPageSteps.changeStatusResolved;
 import static PageObject.PageSteps.TaskPageSteps.changeStatusTodo;
 import static PageObject.PageSteps.TaskPageSteps.checkTaskStatus;
+import static com.codeborne.selenide.Condition.disappear;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static Utils.Configuration.getConfigurationValue;
