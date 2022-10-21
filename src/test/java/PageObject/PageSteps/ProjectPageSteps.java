@@ -3,14 +3,12 @@ package PageObject.PageSteps;
 import io.qameta.allure.Step;
 
 import static PageObject.PageElements.ProjectPageElements.menuButton;
-import static PageObject.PageElements.ProjectPageElements.projectSidebar;
 import static PageObject.PageElements.ProjectPageElements.projectTitle;
 import static PageObject.PageElements.ProjectPageElements.softwareVersion;
 import static PageObject.PageElements.ProjectPageElements.taskLink;
 import static PageObject.PageElements.ProjectPageElements.taskStatus;
 import static PageObject.PageElements.ProjectPageElements.tasks;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -54,10 +52,6 @@ public class ProjectPageSteps {
         return projectTitle.shouldBe(exist).innerText();
     }
 
-    @Step("Проверяем появилась ли боковая панель проекта")
-    public static boolean isProjectSidebarAppears() {
-        return projectSidebar.is(appear);
-    }
 
     private static void openMenu(String menuTitle) {
         menuButton(menuTitle).shouldBe(visible).click();
