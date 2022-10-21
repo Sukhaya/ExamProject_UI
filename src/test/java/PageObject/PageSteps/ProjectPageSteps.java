@@ -37,12 +37,17 @@ public class ProjectPageSteps {
         taskLink.shouldBe(visible).click();
     }
 
-    @Step("Проверяем статус задачи и выводим привязку к версии")
-    public static void checkStatusAndVersion() {
-        String svText = softwareVersion.shouldBe(visible).getText();
-        String taskStatusText = taskStatus.shouldBe(visible).getText();
-        System.out.println("Software version: " + svText + "\nTask status: " + taskStatusText);
+
+    @Step("Проверяем статус задачи")
+    public static String checkStatus() {
+        return taskStatus.shouldBe(visible).getText();
     }
+
+    @Step("Проверяем привязку к версии")
+    public static String checkVersion() {
+        return softwareVersion.shouldBe(visible).getText();
+    }
+
 
     @Step("Получаем название текущего открытого проекта")
     public static String getProjectTitle() {

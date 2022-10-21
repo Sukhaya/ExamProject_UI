@@ -13,7 +13,8 @@ import static PageObject.PageSteps.MainPageSteps.isUserProfileIconVisible;
 import static PageObject.PageSteps.MainPageSteps.openCreateTask;
 import static PageObject.PageSteps.MainPageSteps.openMenuOfProjects;
 import static PageObject.PageSteps.MainPageSteps.openTestProject;
-import static PageObject.PageSteps.ProjectPageSteps.checkStatusAndVersion;
+import static PageObject.PageSteps.ProjectPageSteps.checkStatus;
+import static PageObject.PageSteps.ProjectPageSteps.checkVersion;
 import static PageObject.PageSteps.ProjectPageSteps.getProjectTitle;
 import static PageObject.PageSteps.ProjectPageSteps.isProjectSidebarAppears;
 import static PageObject.PageSteps.ProjectPageSteps.openIssuesPage;
@@ -66,7 +67,8 @@ public class TestJira extends WebHooks {
         openTestProject();
         openIssuesPage();
         openTask("TestSelenium_bug");
-        checkStatusAndVersion();
+        assertTrue(checkStatus().length() > 0, "Статус задачи не задан");
+        assertTrue(checkVersion().length() > 0, "Версия для исправления не записана");
     }
 
     @Test
